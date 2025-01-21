@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Keyboard Check</title>
+    <style>
+        table, th, td{
+            border: 1px solid #e7e7e7
+        }
+        .project {
+            background-color: #1c1c1c;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            height: 100vh;
+        }
+        .color {
+            color: aliceblue;
+            display: flex;
+            flex-direction: row;
+
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="href">Home</a>
+        <br/>
+        <a href="/jsByHitesh/11_projects/01_basic_projects/index.html" class="href">↩</a>
+    </nav>
+    <h1>Keyboard Check</h1>
+    <div class="project">
+        <div id="insert">
+            <div class="key">Press Any key</div>
+        </div>
+    </div>
+    
+</body>
+<script>
+
+    const insert = document.getElementById('insert');
+    
+    window.addEventListener('keydown', (e) => {
+        insert.innerHTML = `
+        <div class='color'>
+             <table>
+  <tr>
+    <th>Key Name</th>
+    <th>Keycode</th>
+    <th>Code</th>
+  </tr>
+  <tr>
+    <td>${e.key === ' ' ? 'Space' : e.key}</td>
+    <td>${e.keyCode}</td>
+    <td>${e.code}</td>
+  </tr>
+</table> 
+            </div>
+        `;
+    })
+
+</script>
+</html>

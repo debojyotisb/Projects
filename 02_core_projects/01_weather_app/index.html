@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weather App</title>
+  <style>
+       /* Add basic styles here to make your app look nice */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #a0a0a0;
+      color: #333;
+      text-align: center;
+      padding: 20px;
+    }
+    #cityInput {
+      padding: 10px;
+      font-size: 16px;
+    }
+    #searchButton {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin-left: 10px;
+      cursor: pointer;
+    }
+    #weatherInfo {
+      margin-top: 20px;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+    }
+    .weather-card {
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  color: #333;
+  text-align: center;
+}
+
+/* Sunny Day Animation */
+.icon-clear {
+  background: radial-gradient(circle, #ffea85, #f6c762);
+  border-radius: 50%;
+  animation: sunny-spin 3s linear infinite;
+}
+
+@keyframes sunny-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Rainy Day Animation */
+.icon-rain {
+  position: relative;
+}
+
+.icon-rain::before,
+.icon-rain::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 6px;
+  height: 20px;
+  background: #a0c4ff;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  animation: rain-fall 1s linear infinite;
+}
+
+.icon-rain::after {
+  animation-delay: 0.5s;
+}
+
+@keyframes rain-fall {
+  0% {
+    transform: translate(-50%, -20px);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, 30px);
+    opacity: 1;
+  }
+}
+
+/* Cloudy Animation */
+.icon-clouds {
+  background: linear-gradient(to bottom, #d3d3d3, #b0b0b0);
+  width: 100px;
+  height: 60px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.icon-clouds::after {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 25%;
+  width: 80px;
+  height: 50px;
+  background: linear-gradient(to bottom, #d3d3d3, #b0b0b0);
+  border-radius: 50%;
+}
+
+  </style>
+  
+</head>
+<body>
+    <nav>
+        <a href="/" class="href">Home</a>
+        <br/>
+        <a href="/jsByHitesh/11_projects/02_core_projects/index.html" class="href">↩</a>
+    </nav>
+
+
+  <h1>Weather App</h1>
+  <input type="text" id="cityInput" placeholder="Enter city name" />
+  <button id="searchButton">Get Weather</button>
+  <div id="weatherInfo" class="weather-card">
+    <!-- Weather data will be displayed here -->
+    <h2>Weather in <span id="cityName"></span></h2>
+    <img id="weatherIcon" alt="" />
+    <p>Temperature: <span id="temp"></span>°C</p>
+    <p>Description: <span id="desc"></span></p>
+    <p>Humidity: <span id="humidity"></span>%</p>
+    <p>Wind Speed: <span id="wind"></span> km/h</p>
+  </div>
+
+ 
+<!-- <script>
+    const searchButton = document.getElementById('searchButton');
+    const cityInput = document.getElementById('cityInput');
+    const weatherInfo = document.getElementById('weatherInfo');
+  
+    searchButton.addEventListener('click', () => {
+      const cityName = cityInput.value.trim();
+      if (cityName) {
+        // Simulate fetching weather data with a random temperature for demonstration
+        const temperature = Math.floor(Math.random() * 40); // Random temperature between 0 and 39
+  
+        // Display weather information
+        weatherInfo.innerHTML = `The temperature in ${cityName} is ${temperature}°C`;
+  
+        // Change the background color based on temperature
+        if (temperature < 10) {
+          weatherInfo.style.backgroundColor = '#a0d8ef'; // Cool blue
+        } else if (temperature < 25) {
+          weatherInfo.style.backgroundColor = '#fff3b0'; // Warm yellow
+        } else {
+          weatherInfo.style.backgroundColor = '#ffb3b3'; // Hot red
+        }
+      } else {
+        weatherInfo.innerHTML = 'Please enter a city name.';
+        weatherInfo.style.backgroundColor = '#fff';
+      }
+    });
+  </script> -->
+  <script src="index.js"></script
+  
+</html>

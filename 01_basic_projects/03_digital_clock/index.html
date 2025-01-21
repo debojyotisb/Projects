@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Clock</title>
+    <style>
+        body {
+            background-color: #909090;
+            color: #1f1f1f;
+        }
+        .center {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+        }
+        #clock {
+            font-size: 50px;
+            background-color: orange;
+            padding: 20px 50px;
+            margin-top: 10px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="/" class="href">Home</a>
+        <br/>
+        <a href="/jsByHitesh/11_projects/01_basic_projects/index.html" class="href">↩</a>
+    </nav>
+    <div class="center">
+        <div id="banner"> <span>Your Local Time </span> </div>
+        <div id="clock"></div>
+        <div style="margin: 10px;">
+            <button id="start" type="button">Start</button>
+            <button id="stop" type="button">Stop</button>
+        </div>
+    </div>
+    
+</body>
+<script src="index.js"></script>
+</html>

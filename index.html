@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <title>Projects</title>
+    <style>
+        body {
+            margin-left: 0px; /* Removes default margin */
+            margin-top: 0px;
+            margin-right: 0px;
+            font-family: 'Arial', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+            
+        }
+        .light-mode {
+            background-color:#d2cdcd ;
+            color: #000000;
+            
+        }
+
+        .dark-mode {
+            background-color: #2c2b2b;
+            color: #ffffff;
+        }
+
+        #toggleMode {
+            position: fixed;
+            top: 28px;
+            right: 90px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        #toggleMode:hover {
+            background-color: #3f8fe5;
+        }
+        
+        #nav{
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: linear-gradient(to right, #00b7ff, #8ad400, #af744c);
+            color: white;
+            padding: 10px 15px;
+            text-align: center;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        #main{
+            padding: 100px;
+            display: flex;
+         
+        }
+        #projects h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            
+        }
+        
+        #projects{
+            text-align: center;
+            font-size: larger;
+            margin-top: 36px;
+
+        }
+
+        #ul{
+            font-size: larger;
+            display: flex;
+            display: flex;
+            gap: 15px;
+            justify-content:center;
+            padding: 0;
+            margin: 0;
+        }
+        #li{
+            list-style:none;
+            margin: 10px;
+            padding: 10px;
+            border: 2px solid #606060;
+            border-radius: 10px;
+            transition: background-color 0.3s, transform 0.2s;
+            font-size: 16px;
+        }
+
+        #li a {
+            text-decoration: none;
+            color: inherit;
+        }
+        #li:hover{
+            background-color: #007bff;
+            color: white;
+            transform: scale(1.05);
+        }
+
+        #profile-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        #profile-picture {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            border: 2px solid #ffffff;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        #profile-picture:hover {
+            transform:matrix(1.2, 0, 0, 1.2, 0, 0);
+        }
+
+        #popup-card {
+            position: absolute;
+            top: 72px;
+            left: -143px;
+            
+            background: whitesmoke;
+            border: 1px solid #cccccc;
+            border-radius: 10px;
+            padding: 10px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+            display: none;
+            width: 200px;
+            z-index: 10;
+            
+        }
+
+        #profile-container:hover #popup-card {
+            display: block;
+        }
+
+        #popup-card h3 {
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+        }
+
+        #popup-card a {
+            text-decoration: none;
+            color: #0077cc;
+            font-size: 14px;
+        }
+
+        #popup-card a:hover {
+            text-decoration: underline;
+        }
+        #popup-card::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 150%;
+        height: 150%;
+        background: radial-gradient(circle, rgba(92, 144, 149, 0.522) 5%, transparent 50%);
+        transform: translate(-50%, -50%) scale(0);
+        opacity: 0;
+        transition: transform 0.5s, opacity 0.5s;
+        pointer-events: none;
+        }
+
+         /* Smoke Effect */
+         .smoke {
+            position: absolute;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: rgba(0, 0, 0, 0.2);
+            pointer-events: none;
+            animation: fade-smoke 0.5s ease-out forwards;
+        }
+
+        @keyframes fade-smoke {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(2);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(3);
+                opacity: 0;
+            }
+        }
+      
+
+        #contact {
+            display: flex;
+            gap: 23px;
+            margin-top: -10px;
+            margin-left: 1px;
+            justify-content: center;
+        }
+    </style>
+    
+</head>
+<body class="light-mode">
+    <nav id="nav">
+        <h1>Project Playground</h1>
+        <div id="toggle">
+            <button type="button" id="toggleMode">Dark Mode</button>
+        </div>
+        <div id="profile-container">
+            <img id="profile-picture" src="images/Project Profile.jpeg
+            " alt="Profile Picture">
+            <div id="popup-card">
+                <h3>Debojyoti Suklabaidya</h3>
+                <p><a href="https://github.com/debojyotisb" target="_blank">GitHub</a></p>
+                <p><a href="https://www.linkedin.com/in/debojyoti-suklabaidya-696a86219/" target="_blank">Linkedin</a></p>
+                <div id="contact">
+                    <p><a href="tel:9531100494" target="_phone">Call</a></p>
+                    <p><a href="mailto:suklabaidyad@gmail.com" target="_email">Email</a></p>
+                </div>
+                
+            </div>
+        </div>
+    </nav>
+
+   <div id="main">
+    <span id="projects">
+        <h3>Projects</h3>
+    </span>
+    <span id="ul">
+        <ul>
+            <li id="li">
+                <a href="/01_basic_projects/index.html">Basic Projects</a>
+            </li>
+            <li id="li">
+                <a href="/02_core_projects/index.html">Core Projects</a>
+            </li>
+        </ul>
+    </span>
+   </div>
+
+   
+   
+   <script src="practice.js" ></script>
+   <script src="01_variables.js" ></script>
+   <script>
+    const toggleButton = document.getElementById('toggleMode');
+        const body = document.body;
+
+        toggleButton.addEventListener('click', () => {
+            if (body.classList.contains('light-mode')) {
+                body.classList.replace('light-mode', 'dark-mode');
+                toggleButton.textContent = 'Light Mode';
+            } else {
+                body.classList.replace('dark-mode', 'light-mode');
+                toggleButton.textContent = 'Dark Mode';
+                }
+            });
+
+            // Smoke Effect
+            const popupCard = document.getElementById('popup-card');
+
+            popupCard.addEventListener('mousemove', (e) => {
+            const rect = popupCard.getBoundingClientRect(); // Get popup card's position
+            const smoke = document.createElement('div');
+            smoke.classList.add('smoke');
+
+            // Calculate position relative to the popup card
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+
+            smoke.style.left = `${x}px`;
+            smoke.style.top = `${y}px`;
+
+            popupCard.appendChild(smoke);
+
+            // Remove smoke after animation ends
+            smoke.addEventListener('animationend', () => {
+                smoke.remove();
+            });
+        });
+   </script>
+
+   <!-- Comments
+   body style
+   <body style="
+    background-color: #cfcfcf;
+    padding: 10px 30px;
+    border-radius: 8px;
+    color: #212121;
+    text-decoration: none;
+    border: 2px solid #212121;
+    " > -->
+    
+
+</body>
+</html>
